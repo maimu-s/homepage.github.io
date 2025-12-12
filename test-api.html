@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Test</title>
+</head>
+<body>
+    <h1>API Test</h1>
+    <div id="results"></div>
+
+    <script type="module">
+        const YOUTUBE_API_KEY = 'AIzaSyDLJQbZtJLBopZ3EmiW_XCw3H9ZM_ZAkqo';
+        const YOUTUBE_CHANNEL_ID = 'UCg3tKEUFef2R-wQ-hRahkiQ';
+        const TWITCH_RSS_URL = 'https://twitchrss.appspot.com/vod/suzunemaimu';
+
+        async function testYouTube() {
+            console.log('Testing YouTube API...');
+            const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=${YOUTUBE_CHANNEL_ID}&order=date&maxResults=5&key=${YOUTUBE_API_KEY}`;
+
+            try {
+                const response = await fetch(searchUrl);
+                const data = await response.json();
+                console.log('YouTube API Response:', data);
+                document.getElementById('results').innerHTML += `<h2>YouTube: ${data.items?.length || 0} videos</h2>`;
+            } catch (error) {
+                console.error('YouTube API Error:', error);
+                document.getElementById('results').innerHTML += `<h2>YouTube: ERROR - ${error.message}</h2>`;
+            }
+        }
+
+        async function testTwitch() {
+            console.log('Testing Twitch RSS...');
+
+            try {
+                const response = await fetch(TWITCH_RSS_URL);
+                const xmlText = await response.text();
+                console.log('Twitch RSS Response (first 500 chars):', xmlText.substring(0, 500));
+
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                const items = xmlDoc.querySelectorAll('item');
+
+                console.log('Twitch RSS Items:', items.length);
+                document.getElementById('results').innerHTML += `<h2>Twitch: ${items.length} videos</h2>`;
+
+                items.forEach((item, index) => {
+                    if (index < 3) {
+                        const title = item.querySelector('title')?.textContent;
+                        console.log(`Item ${index}:`, title);
+                    }
+                });
+            } catch (error) {
+                console.error('Twitch RSS Error:', error);
+                document.getElementById('results').innerHTML += `<h2>Twitch: ERROR - ${error.message}</h2>`;
+            }
+        }
+
+        testYouTube();
+        testTwitch();
+    </script>
+</body>
+</html>

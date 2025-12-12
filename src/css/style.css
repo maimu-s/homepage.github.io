@@ -1,0 +1,78 @@
+/* リセットCSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', 'Hiragino Sans', 'Yu Gothic UI', Meiryo, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    padding-top: 70px; /* ヘッダーの高さ分 */
+}
+
+/* スクロールバーのスタイリング */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F5B3B8;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #f39ca3;
+}
+
+/* アクセシビリティ対応 */
+a:focus,
+button:focus {
+    outline: none;
+}
+
+/* 画像の最適化 */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: none;
+}
+
+/* ユーティリティクラス */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding-top: 60px;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}

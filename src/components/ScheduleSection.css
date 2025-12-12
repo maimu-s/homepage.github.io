@@ -1,0 +1,381 @@
+.schedule-section {
+    padding: 2rem 2rem;
+    background: linear-gradient(180deg, #fffcf5 0%, #fffef9 100%);
+}
+
+.schedule-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.schedule-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    margin-bottom: 50px;
+}
+
+.section-title .title-en {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F5B3B8;
+    letter-spacing: 0.1em;
+}
+
+.section-title .title-ja {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    letter-spacing: 0.2em;
+}
+
+.last-update {
+    display: none;
+}
+
+.loading, .error {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+.error {
+    color: #ff4444;
+}
+
+.schedule-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.scroll-button {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: #F5B3B8;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.scroll-button:hover {
+    background-color: #F6D462;
+    transform: scale(1.1);
+}
+
+.scroll-button:active {
+    transform: scale(0.95);
+}
+
+.schedule-list {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    scrollbar-width: thin;
+    scrollbar-color: #F5B3B8 #f0f0f0;
+}
+
+.schedule-list::-webkit-scrollbar {
+    height: 8px;
+}
+
+.schedule-list::-webkit-scrollbar-track {
+    background: #f0f0f0;
+    border-radius: 4px;
+}
+
+.schedule-list::-webkit-scrollbar-thumb {
+    background: #F5B3B8;
+    border-radius: 4px;
+}
+
+.schedule-list::-webkit-scrollbar-thumb:hover {
+    background: #f39ca3;
+}
+
+.schedule-card {
+    flex: 0 0 280px;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.schedule-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.schedule-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #F5B3B8 0%, #F6D462 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.schedule-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumbnail-placeholder {
+    color: white;
+    opacity: 0.7;
+}
+
+.status-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-配信予定 {
+    background-color: #4CAF50;
+}
+
+.status-配信中 {
+    background-color: #FF4444;
+    animation: pulse 2s infinite;
+}
+
+.status-アーカイブ {
+    background-color: #999;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.schedule-info {
+    padding: 1rem;
+}
+
+.schedule-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.schedule-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.platform-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.viewer-count {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #F5B3B8;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.schedule-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: linear-gradient(135deg, #F5B3B8 0%, #F6D462 100%);
+    overflow: hidden;
+}
+
+.card-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.placeholder-thumbnail {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+}
+
+.status-badge {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+}
+
+.status-scheduled {
+    background-color: #4CAF50;
+}
+
+.status-live {
+    background-color: #FF4444;
+    animation: pulse 2s infinite;
+}
+
+.status-archived {
+    background-color: #757575;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.card-info {
+    padding: 1rem;
+}
+
+.card-platform {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0.5rem 0;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin: 0.5rem 0 0 0;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: white;
+    border: 2px solid #F5B3B8;
+    color: #F5B3B8;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-button:hover {
+    background: #F5B3B8;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-button-left {
+    left: -25px;
+}
+
+.slider-button-right {
+    right: -25px;
+}
+
+@media (max-width: 768px) {
+    .schedule-section {
+        padding: 5rem 1rem;
+    }
+
+    .schedule-cards {
+        gap: 1rem;
+        padding: 1.5rem 0;
+    }
+
+    .schedule-card {
+        flex: 0 0 250px;
+    }
+
+    .slider-button {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+
+    .slider-button-left {
+        left: -10px;
+    }
+
+    .slider-button-right {
+        right: -10px;
+    }
+}

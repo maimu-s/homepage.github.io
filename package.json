@@ -1,0 +1,36 @@
+{
+  "name": "202512-maimu-hp",
+  "version": "1.0.0",
+  "description": "Maimu Homepage Project with React",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rimraf dist",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [
+    "react",
+    "website",
+    "vite"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^25.0.1",
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^5.1.2",
+    "gh-pages": "^6.3.0",
+    "rimraf": "^5.0.0",
+    "terser": "^5.44.1",
+    "typescript": "^5.9.3",
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "microcms-js-sdk": "^3.2.0",
+    "react": "^19.2.1",
+    "react-dom": "^19.2.1"
+  }
+}

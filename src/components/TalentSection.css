@@ -1,0 +1,578 @@
+.talent-section {
+    padding: 2rem 2rem;
+    background: linear-gradient(180deg, #fffaf8 0%, #fffcf5 100%);
+}
+
+.talent-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title .title-en {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F5B3B8;
+    letter-spacing: 0.1em;
+}
+
+.section-title .title-ja {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    letter-spacing: 0.2em;
+}
+
+/* 新しいカードレイアウト */
+.talent-card {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* アイコンコンテナ */
+.talent-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    flex-shrink: 0;
+}
+
+/* アイコン */
+.talent-icon {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #F5B3B8;
+    box-shadow: 0 4px 15px rgba(245, 179, 184, 0.3);
+}
+
+.talent-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 三面図ボタン */
+.threeview-button {
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #F5B3B8 0%, #F6D462 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 179, 184, 0.3);
+    white-space: nowrap;
+}
+
+.threeview-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 179, 184, 0.5);
+}
+
+.threeview-button:active {
+    transform: translateY(-1px);
+}
+
+/* 情報エリア */
+.talent-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* ヘッダー（名前等） */
+.talent-header {
+    border-bottom: 2px solid #F5B3B8;
+    padding-bottom: 1rem;
+}
+
+.talent-name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.talent-name-en {
+    font-size: 1.2rem;
+    color: #666;
+    font-style: italic;
+    letter-spacing: 0.1em;
+}
+
+/* 説明文 */
+.talent-description {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #555;
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+/* プロジェクト・グループ（ロゴベース） */
+.talent-affiliations {
+    display: flex;
+    gap: 2rem;
+}
+
+.affiliations-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.affiliation-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    text-align: left;
+}
+
+.affiliation-logos {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5rem;
+    justify-content: flex-start;
+    align-items: flex-end;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: #F5B3B8 #f1f1f1;
+}
+
+.affiliation-logos::-webkit-scrollbar {
+    height: 6px;
+}
+
+.affiliation-logos::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.affiliation-logos::-webkit-scrollbar-thumb {
+    background: #F5B3B8;
+    border-radius: 10px;
+}
+
+.affiliation-logos::-webkit-scrollbar-thumb:hover {
+    background: #F6D462;
+}
+
+/* スマホ用対応 */
+@media (max-width: 767px) {
+    .talent-affiliations {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .affiliation-item {
+        flex-shrink: 0;
+    }
+
+    .affiliation-logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.affiliation-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.affiliation-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.affiliation-logo {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+/* SNSリンク */
+.talent-social {
+    display: flex;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: #F5B3B8;
+    color: white;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: #F6D462;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(246, 212, 98, 0.5);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1023px) {
+    .talent-card {
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .talent-icon {
+        width: 150px;
+        height: 150px;
+    }
+
+    .talent-name {
+        font-size: 2rem;
+    }
+
+    .talent-name-en {
+        font-size: 1rem;
+    }
+
+    .talent-description {
+        font-size: 1rem;
+    }
+
+    .threeview-content {
+        width: 90%;
+        max-height: 80vh;
+        padding: 2rem;
+    }
+
+    .threeview-image {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .talent-section {
+        padding: 4rem 1rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .talent-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .talent-icon {
+        width: 180px;
+        height: 180px;
+    }
+
+    .talent-name {
+        font-size: 1.8rem;
+    }
+
+    .talent-social {
+        justify-content: center;
+    }
+
+    .threeview-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .threeview-content {
+        width: 95%;
+        max-height: 85vh;
+        padding: 1.5rem 0.75rem;
+    }
+
+    .threeview-title {
+        font-size: 1.5rem;
+    }
+
+    .threeview-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .threeview-close {
+        width: 36px;
+        height: 36px;
+        font-size: 1.8rem;
+    }
+}
+
+/* 三面図ポップアップ */
+.threeview-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.threeview-content {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    max-width: 1200px;
+    width: 95%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.threeview-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #F5B3B8;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.threeview-close:hover {
+    background: #F6D462;
+    transform: rotate(90deg);
+}
+
+.threeview-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+}
+
+/* 三面図スライダー */
+.threeview-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+/* スライドコンテナ（高さ固定） */
+.threeview-slides-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.threeview-slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.threeview-slide.active {
+    display: flex;
+    position: relative;
+    opacity: 1;
+}
+
+/* ナビゲーションボタン */
+.threeview-nav {
+    background: #F5B3B8;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 2;
+}
+
+.threeview-nav:hover {
+    background: #F6D462;
+    transform: scale(1.1);
+}
+
+.threeview-nav:active {
+    transform: scale(0.95);
+}
+
+/* インジケーター */
+.threeview-indicators {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+}
+
+.threeview-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #F5B3B8;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.threeview-indicator:hover {
+    background: rgba(245, 179, 184, 0.3);
+}
+
+.threeview-indicator.active {
+    background: #F5B3B8;
+}
+
+/* スマホ用: ボタンサイズ調整 */
+@media (max-width: 767px) {
+    .threeview-slider {
+        gap: 0.5rem;
+    }
+
+    .threeview-slides-container {
+        min-height: 500px;
+    }
+
+    .threeview-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 2rem;
+    }
+
+    .threeview-indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.threeview-subtitle {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #F5B3B8;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin: 0;
+}
+
+.threeview-image {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* スクロールバーのスタイリング */
+.threeview-content::-webkit-scrollbar {
+    width: 10px;
+}
+
+.threeview-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.threeview-content::-webkit-scrollbar-thumb {
+    background: #F5B3B8;
+    border-radius: 10px;
+}
+
+.threeview-content::-webkit-scrollbar-thumb:hover {
+    background: #F6D462;
+}

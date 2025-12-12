@@ -1,0 +1,82 @@
+/* コンタクトセクション */
+.contact-section {
+    padding: 2rem 2rem;
+    background: linear-gradient(180deg, #fffef9 0%, #ffffff 100%);
+}
+
+.contact-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-title {
+    margin-bottom: 50px;
+}
+
+.contact-title .title-en {
+    display: block;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #F5B3B8;
+    letter-spacing: 0.1em;
+}
+
+.contact-title .title-ja {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    letter-spacing: 0.2em;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-description {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 18px 50px;
+    background: linear-gradient(135deg, #F5B3B8 0%, #F6D462 100%);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(245, 179, 184, 0.3);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(245, 179, 184, 0.5);
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 767px) {
+    .contact-section {
+        padding: 60px 15px;
+    }
+
+    .contact-title .title-en {
+        font-size: 2rem;
+    }
+
+    .contact-description {
+        font-size: 1rem;
+    }
+
+    .contact-button {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+    }
+}

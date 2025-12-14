@@ -66,7 +66,7 @@ function Footer() {
                 </div>
 
                 <p className="footer-copyright">
-                    掲載の記事・写真・イラスト等、全てのコンテンツの無断複製・転載を禁じます。 &copy; {currentYear} 鈴音舞夢. All rights reserved.
+                    掲載の記事・写真・イラスト等、全てのコンテンツの無断複製・転載を禁じます。<br />&copy; {currentYear} 鈴音舞夢. All rights reserved.
                 </p>
             </div>
         </footer>

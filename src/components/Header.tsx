@@ -24,7 +24,16 @@ function Header() {
 
         const element = document.getElementById(sectionId);
         if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // ヘッダー要素から実際の高さを取得
+            const header = document.querySelector('.header') as HTMLElement;
+            const headerHeight = header ? header.offsetHeight : 70;
+            const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementPosition - headerHeight;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
             setIsMobileMenuOpen(false);
         }
     };

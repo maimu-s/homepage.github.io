@@ -351,18 +351,52 @@
     right: -25px;
 }
 
-@media (max-width: 768px) {
+/* ========================================
+   レスポンシブ対応
+   ======================================== */
+
+/* タブレット対応 (1023px以下) */
+@media (max-width: 1023px) {
     .schedule-section {
-        padding: 5rem 1rem;
+        padding: 2rem 2rem;
+    }
+}
+
+/* モバイル対応 (767px以下) */
+@media (max-width: 767px) {
+    .schedule-section {
+        padding: 1rem 1rem;
     }
 
-    .schedule-cards {
-        gap: 1rem;
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .section-title .title-en {
+        font-size: 2rem;
+    }
+
+    .schedule-wrapper {
+        gap: 0;
+    }
+
+    /* スマホでボタンを非表示 */
+    .scroll-button-desktop {
+        display: none;
+    }
+
+    .schedule-list {
+        width: 100%;
         padding: 1.5rem 0;
     }
 
     .schedule-card {
         flex: 0 0 250px;
+    }
+
+    .schedule-cards {
+        gap: 1rem;
+        padding: 1.5rem 0;
     }
 
     .slider-button {

@@ -68,10 +68,6 @@ img {
 }
 
 @media (max-width: 768px) {
-    main {
-        padding-top: 60px;
-    }
-
     .container {
         padding: 0 1rem;
     }

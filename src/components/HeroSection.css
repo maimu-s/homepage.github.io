@@ -159,7 +159,11 @@
     }
 }
 
-/* タブレット対応 */
+/* ========================================
+   レスポンシブ対応
+   ======================================== */
+
+/* タブレット対応 (1023px以下) */
 @media (max-width: 1023px) {
     .hero-container {
         padding: 0 2rem;
@@ -188,13 +192,12 @@
     }
 }
 
-/* モバイル対応 */
+/* モバイル対応 (767px以下) */
 @media (max-width: 767px) {
     .hero-container {
         flex-direction: column;
-        padding: 4rem 1.5rem;
+        padding: 2rem 1rem;
         text-align: center;
-        gap: 3rem;
     }
 
     .hero-content {

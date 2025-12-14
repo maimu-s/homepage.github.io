@@ -61,10 +61,25 @@
     box-shadow: 0 6px 20px rgba(245, 179, 184, 0.5);
 }
 
-/* レスポンシブ対応 */
+/* ========================================
+   レスポンシブ対応
+   ======================================== */
+
+/* タブレット対応 (1023px以下) */
+@media (max-width: 1023px) {
+    .contact-section {
+        padding: 2rem 2rem;
+    }
+}
+
+/* モバイル対応 (767px以下) */
 @media (max-width: 767px) {
     .contact-section {
-        padding: 60px 15px;
+        padding: 1rem 1rem;
+    }
+
+    .contact-title {
+        margin-bottom: 2rem;
     }
 
     .contact-title .title-en {

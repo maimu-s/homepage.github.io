@@ -26,10 +26,14 @@ function NewsSection() {
 
     const openNewsDetail = (newsItem: NewsItem) => {
         setSelectedNews(newsItem);
+        // モーダル表示時に背景のスクロールを防止
+        document.body.style.overflow = 'hidden';
     };
 
     const closeNewsDetail = () => {
         setSelectedNews(null);
+        // モーダル閉じる時に背景のスクロールを復元
+        document.body.style.overflow = '';
     };
 
     return (

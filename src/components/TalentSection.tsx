@@ -34,6 +34,11 @@ interface TalentData {
 function TalentSection() {
     const [isThreeviewOpen, setIsThreeviewOpen] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    // スワイプの最小距離
+    const minSwipeDistance = 50;
 
     // 三面図データ
     const threeviews = [
@@ -55,6 +60,39 @@ function TalentSection() {
     const openModal = () => {
         setCurrentSlide(0);
         setIsThreeviewOpen(true);
+        // モーダル表示時に背景のスクロールを防止
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeModal = () => {
+        setIsThreeviewOpen(false);
+        // モーダル閉じる時に背景のスクロールを復元
+        document.body.style.overflow = '';
+    };
+
+    // タッチイベントハンドラー
+    const onTouchStart = (e: React.TouchEvent) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e: React.TouchEvent) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        if (isLeftSwipe) {
+            nextSlide();
+        }
+        if (isRightSwipe) {
+            prevSlide();
+        }
     };
 
     // モックデータ(後で実際のデータに置き換え)
@@ -194,11 +232,17 @@ function TalentSection() {
 
                 {/* 三面図ポップアップ */}
                 {isThreeviewOpen && (
-                    <div className="threeview-modal" onClick={() => setIsThreeviewOpen(false)}>
-                        <div className="threeview-content" onClick={(e) => e.stopPropagation()}>
+                    <div className="threeview-modal" onClick={closeModal}>
+                        <div
+                            className="threeview-content"
+                            onClick={(e) => e.stopPropagation()}
+                            onTouchStart={onTouchStart}
+                            onTouchMove={onTouchMove}
+                            onTouchEnd={onTouchEnd}
+                        >
                             <button
                                 className="threeview-close"
-                                onClick={() => setIsThreeviewOpen(false)}
+                                onClick={closeModal}
                                 aria-label="閉じる"
                             >
                                 ×
@@ -206,9 +250,9 @@ function TalentSection() {
                             <h3 className="threeview-title">衣装 三面図</h3>
 
                             <div className="threeview-slider">
-                                {/* 左ボタン */}
+                                {/* 左ボタン (デスクトップのみ) */}
                                 <button
-                                    className="threeview-nav threeview-nav-prev"
+                                    className="threeview-nav threeview-nav-prev threeview-nav-desktop"
                                     onClick={prevSlide}
                                     aria-label="前の衣装"
                                 >
@@ -232,9 +276,9 @@ function TalentSection() {
                                     ))}
                                 </div>
 
-                                {/* 右ボタン */}
+                                {/* 右ボタン (デスクトップのみ) */}
                                 <button
-                                    className="threeview-nav threeview-nav-next"
+                                    className="threeview-nav threeview-nav-next threeview-nav-desktop"
                                     onClick={nextSlide}
                                     aria-label="次の衣装"
                                 >

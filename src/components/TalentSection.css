@@ -178,23 +178,6 @@
     background: #F6D462;
 }
 
-/* スマホ用対応 */
-@media (max-width: 767px) {
-    .talent-affiliations {
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .affiliation-item {
-        flex-shrink: 0;
-    }
-
-    .affiliation-logo {
-        width: 50px;
-        height: 50px;
-    }
-}
-
 .affiliation-item {
     display: flex;
     flex-direction: column;
@@ -245,98 +228,6 @@
     background-color: #F6D462;
     transform: translateY(-3px);
     box-shadow: 0 4px 12px rgba(246, 212, 98, 0.5);
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 1023px) {
-    .talent-card {
-        gap: 2rem;
-        padding: 2rem;
-    }
-
-    .talent-icon {
-        width: 150px;
-        height: 150px;
-    }
-
-    .talent-name {
-        font-size: 2rem;
-    }
-
-    .talent-name-en {
-        font-size: 1rem;
-    }
-
-    .talent-description {
-        font-size: 1rem;
-    }
-
-    .threeview-content {
-        width: 90%;
-        max-height: 80vh;
-        padding: 2rem;
-    }
-
-    .threeview-image {
-        max-width: 100%;
-    }
-}
-
-@media (max-width: 767px) {
-    .talent-section {
-        padding: 4rem 1rem;
-    }
-
-    .section-title {
-        font-size: 2rem;
-        margin-bottom: 3rem;
-    }
-
-    .talent-card {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 2rem;
-        padding: 2rem 1.5rem;
-    }
-
-    .talent-icon {
-        width: 180px;
-        height: 180px;
-    }
-
-    .talent-name {
-        font-size: 1.8rem;
-    }
-
-    .talent-social {
-        justify-content: center;
-    }
-
-    .threeview-button {
-        padding: 0.6rem 1.5rem;
-        font-size: 0.9rem;
-    }
-
-    .threeview-content {
-        width: 95%;
-        max-height: 85vh;
-        padding: 1.5rem 0.75rem;
-    }
-
-    .threeview-title {
-        font-size: 1.5rem;
-    }
-
-    .threeview-subtitle {
-        font-size: 1.1rem;
-    }
-
-    .threeview-close {
-        width: 36px;
-        height: 36px;
-        font-size: 1.8rem;
-    }
 }
 
 /* 三面図ポップアップ */
@@ -519,27 +410,7 @@
     background: #F5B3B8;
 }
 
-/* スマホ用: ボタンサイズ調整 */
-@media (max-width: 767px) {
-    .threeview-slider {
-        gap: 0.5rem;
-    }
 
-    .threeview-slides-container {
-        min-height: 500px;
-    }
-
-    .threeview-nav {
-        width: 40px;
-        height: 40px;
-        font-size: 2rem;
-    }
-
-    .threeview-indicator {
-        width: 10px;
-        height: 10px;
-    }
-}
 
 .threeview-subtitle {
     font-size: 1.3rem;
@@ -575,4 +446,163 @@
 
 .threeview-content::-webkit-scrollbar-thumb:hover {
     background: #F6D462;
+}
+
+/* ========================================
+   レスポンシブ対応
+   ======================================== */
+
+/* タブレット対応 (1023px以下) */
+@media (max-width: 1023px) {
+    .talent-section {
+        padding: 2rem 2rem;
+    }
+
+    .talent-card {
+        gap: 2rem;
+        padding: 2rem;
+    }
+
+    .talent-icon {
+        width: 150px;
+        height: 150px;
+    }
+
+    .talent-name {
+        font-size: 2rem;
+    }
+
+    .talent-name-en {
+        font-size: 1rem;
+    }
+
+    .talent-description {
+        font-size: 1rem;
+    }
+
+    .threeview-content {
+        width: 90%;
+        max-height: 80vh;
+        padding: 2rem;
+    }
+
+    .threeview-image {
+        max-width: 100%;
+    }
+}
+
+/* モバイル対応 (767px以下) */
+@media (max-width: 767px) {
+    .talent-section {
+        padding: 1rem 1rem;
+    }
+
+    .section-title {
+        margin-bottom: 2rem;
+    }
+
+    .section-title .title-en {
+        font-size: 2rem;
+    }
+
+    .talent-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+        padding: 2rem 1.5rem;
+    }
+
+    .talent-icon {
+        width: 180px;
+        height: 180px;
+    }
+
+    .talent-name {
+        font-size: 1.8rem;
+    }
+
+    .talent-social {
+        justify-content: center;
+    }
+
+    .threeview-button {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .talent-affiliations {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .affiliation-item {
+        flex-shrink: 0;
+    }
+
+    .affiliation-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* スマホ表示時の三面図モーダル */
+    .threeview-modal {
+        padding: 0.5rem;
+    }
+
+    .threeview-content {
+        width: 100%;
+        max-width: 100%;
+        max-height: 95vh;
+        padding: 1rem 0.5rem;
+        border-radius: 15px;
+    }
+
+    .threeview-title {
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .threeview-subtitle {
+        font-size: 1rem;
+    }
+
+    .threeview-close {
+        width: 36px;
+        height: 36px;
+        font-size: 1.8rem;
+        top: 0.5rem;
+        right: 0.5rem;
+    }
+
+    /* ナビゲーションボタンを非表示 */
+    .threeview-nav-desktop {
+        display: none;
+    }
+
+    .threeview-slider {
+        gap: 0;
+        margin: 0;
+    }
+
+    .threeview-slides-container {
+        min-height: auto;
+        width: 100%;
+    }
+
+    .threeview-image {
+        max-width: 100%;
+        max-height: 70vh;
+        border-radius: 10px;
+    }
+
+    .threeview-indicators {
+        margin-top: 1rem;
+        gap: 0.5rem;
+    }
+
+    .threeview-indicator {
+        width: 10px;
+        height: 10px;
+    }
 }
